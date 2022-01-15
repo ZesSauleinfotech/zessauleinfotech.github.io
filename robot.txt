@@ -1,3 +1,0 @@
-User-agent: * 
-Disallow: /assets/vendor/
-Sitemap: http://www.zessauleinfotech.com/sitemap.xml
