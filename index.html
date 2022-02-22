@@ -709,17 +709,27 @@
 
 				<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
 					<form id="javascript_form" action="https://postmail.invotes.com/send" role="form" class="php-email-form">
-						<div class="form-group">
-							<label for="name">Your Name</label>
-							<input type="text" class="form-control" id="name" name="name" placeholder="Name" />
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="name">Your Name</label>
+								<input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" placeholder="Name" />
+								<div class="validate"></div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="name">Your Email</label>
+								<input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" placeholder="Email" />
+								<div class="validate"></div>
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="name">Subject</label>
-							<input type="text" class="form-control" id="name" name="subject" placeholder="Subject" />
+							<input type="text" class="form-control" id="name" name="subject" data-rule="minlen:8" data-msg="Please enter at least 8 chars of subject"  placeholder="Subject"/>
+							<div class="validate"></div>
 						</div>
 						<div class="form-group">
 							<label for="name">Message</label>
-							<textarea name="text" class="form-control"  rows="10" id="name" placeholder="Message"></textarea>
+							<textarea name="text" class="form-control"  rows="10" id="name" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+							<div class="validate"></div>
 						</div>
 						<div class="mb-3">
 							<div class="error-message" id="faliure">Server Error. Try Later!</div>

@@ -131,18 +131,21 @@
     };
 
     function js_onSuccess() {
-        // remove this to avoid redirect
         document.querySelector("#" + form_id_js + " [name='subject']").value="";
         document.querySelector("#" + form_id_js + " [name='text']").value="";
         document.querySelector("#" + form_id_js + " [name='name']").value="";
+        document.querySelector("#" + form_id_js + " [name='email']").value="";
         sendButton.innerHTML='Send Message';
         document.getElementById('success').style.display="block"; 
-        //window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
       }
 
       function js_onError(error) {
-        // remove this to avoid redirect
-        //window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+        document.querySelector("#" + form_id_js + " [name='subject']").value="";
+        document.querySelector("#" + form_id_js + " [name='text']").value="";
+        document.querySelector("#" + form_id_js + " [name='name']").value="";
+        document.querySelector("#" + form_id_js + " [name='email']").value="";
+        sendButton.innerHTML='Send Message';
+        document.getElementById('faliure').style.display="block"; 
       }
 
       var sendButton = document.getElementById("js_send");
@@ -162,8 +165,10 @@
 
         var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
         var message = document.querySelector("#" + form_id_js + " [name='text']").value;
+        var name = document.querySelector("#" + form_id_js + " [name='name']").value;
+        var email = document.querySelector("#" + form_id_js + " [name='email']").value;
         data_js['subject'] = subject;
-        data_js['text'] = message;
+        data_js['text'] = "From: "+email+"\n"+"Name: "+name+"\n\n"+message;
         var params = toParams(data_js);
 
         request.open("POST", "https://postmail.invotes.com/send", true);
