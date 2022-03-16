@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0;
 }
 .counter{
-  color: ##1F2641!important;
+  color: #1F2641!important;
   font-size: 2rem !important;
   font-weight: bold !important; 
 }
@@ -1830,7 +1830,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #fff;
+  background: #d9e9f1;
 }
 
 #footer .footer-top .footer-contact {
